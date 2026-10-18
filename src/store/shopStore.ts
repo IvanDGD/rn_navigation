@@ -29,6 +29,7 @@ export interface ShopStoreState {
   bag: Record<string, number>;
   bagItemOptions: Record<string, { size: string; color?: string }>;
   shippingAddress: ShippingAddress;
+  paymentMethod: PaymentMethod;
   addToBag: (productId: string, size?: string, color?: string) => void;
   updateQuantity: (productId: string, delta: number) => void;
   removeFromBag: (productId: string) => void;
@@ -52,6 +53,7 @@ export const useShopStore = create<ShopStoreState>((set, get) => ({
   bag: { prod_sneakers: 1, prod_denim_jacket: 1 },
   bagItemOptions: { prod_sneakers: { size: '9', color: '#FFFFFF' }, prod_denim_jacket: { size: 'M', color: '#6B8EAD' } },
   shippingAddress: { name: 'Eliza Reed', address: '45 Bright St, NYC' },
+  paymentMethod: { brand: 'Visa', cardNumber: '•••• •••• •••• 4242' },
 
   addToBag: (productId: string, size?: string, color?: string) => {
     set((state) => {

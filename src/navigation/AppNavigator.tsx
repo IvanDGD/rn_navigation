@@ -19,8 +19,8 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function AppNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_right' }}>
-      {/* <Stack.Screen name="ShopTabs" component={ShopTabNavigator} /> */}
+    <Stack.Navigator initialRouteName="ShopTabs" screenOptions={{ headerShown: false, animation: 'slide_from_right' }}>
+      <Stack.Screen name="ShopTabs" component={ShopTabNavigator} />
       <Stack.Screen name="Details" component={DetailsScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="YourBag" component={YourBagScreen} />
